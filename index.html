@@ -1,26 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caza Limones</title>
- <link rel="stylesheet" href="limones.css"/>
-   <script src="utils.js"></script>
+  <link rel="stylesheet" href="limones.css"/>
+  <script src="utils.js"></script>
 </head>
 <body onload="iniciar()">
   <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2>Autor: Fabricio Quillupangui</h2>
-    <canvas id="areaJuego" width="600" height="400"></canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+    <header class="encabezado">
+      <div class="icono-logo">🍋</div>
+      <div>
+        <span class="etiqueta">MINI GAME</span>
+        <h1>Atrapar Limones</h1>
+        <p>Si del cielo te caen limones, ¡atrapa todos los que puedas!</p>
+      </div>
+    </header>
+
+    <div class="autor">
+      <span>🎮</span>
+      <span>Autor: <strong>Fabricio Quillupangui</strong></span>
     </div>
-    <div class="botones">
-      <button onclick="moverIzquierda()">Izquierda</button>
-      <button onclick="moverDerecha()"> Derecha</button>
-      <button onclick="reiniciar()">Reiniciar</button>
-    </div>
+
+    <main class="zona-juego">
+      <div class="barra-superior">
+        <div class="estadistica">
+          <span class="estadistica-icono">🏆</span>
+          <div>
+            <small>PUNTAJE</small>
+            <strong id="txtPuntaje">0</strong>
+          </div>
+        </div>
+
+        <div class="estadistica vidas">
+          <span class="estadistica-icono">❤️</span>
+          <div>
+            <small>VIDAS</small>
+            <strong id="txtVidas">3</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-wrapper">
+        <canvas id="areaJuego" width="600" height="400"></canvas>
+      </div>
+
+      <div class="controles">
+        <p class="ayuda">Usa los botones para mover al jugador</p>
+        <div class="botones">
+          <button class="btn-control" onclick="moverIzquierda()">
+            <span>←</span> Izquierda
+          </button>
+          <button class="btn-control" onclick="moverDerecha()">
+            Derecha <span>→</span>
+          </button>
+          <button class="btn-reiniciar" onclick="reiniciar()">
+            ↻ Reiniciar
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <span>🍋</span> Atrapa los limones y consigue el mejor puntaje
+    </footer>
   </div>
+
   <script src="limones.js"></script>
 </body>
 </html>
